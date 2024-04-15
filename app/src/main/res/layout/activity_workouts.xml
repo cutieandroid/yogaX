@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".screens.workouts">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/chestlogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:onClick="openchest"
+                android:padding="20dp"
+                app:srcCompat="@drawable/chestlogo" />
+
+            <TextView
+                android:id="@+id/chestlogotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="CHEST WORKOUTS"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/shoulderlogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:onClick="openshoulders"
+                android:padding="20dp"
+                app:srcCompat="@drawable/shoulders" />
+
+            <TextView
+                android:id="@+id/shoulderlogotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="SHOULDER WORKOUTS"
+                android:textColor="#FFFFFF" />
+
+
+            <ImageView
+                android:id="@+id/armmslogo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:padding="20dp"
+                app:srcCompat="@drawable/bicepslogog" />
+
+            <TextView
+                android:id="@+id/armmslogotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="Arm workouts"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/backlogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:onClick="openback"
+                android:padding="20dp"
+                app:srcCompat="@drawable/backlogo" />
+
+            <TextView
+                android:id="@+id/backogotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="Back workouts"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/abslogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:onClick="openabs"
+                android:padding="20dp"
+                app:srcCompat="@drawable/abslogo" />
+
+            <TextView
+                android:id="@+id/abslogotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="Abs workouts"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/legslogo"
+                android:layout_width="wrap_content"
+                android:layout_height="363dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:onClick="openlegs"
+                android:padding="20dp"
+                app:srcCompat="@drawable/legsloogo" />
+
+            <TextView
+                android:id="@+id/legslogotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="Legs workouts"
+                android:textColor="@color/white"/>
+
+            <ImageView
+                android:id="@+id/cardiologo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbackground"
+                android:onClick="opencardio"
+                android:padding="20dp"
+                app:srcCompat="@drawable/cardio" />
+
+            <TextView
+                android:id="@+id/cardiologotextview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/cardbuttonbg"
+                android:gravity="center"
+                android:text="CARDIO WORKOUTS"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

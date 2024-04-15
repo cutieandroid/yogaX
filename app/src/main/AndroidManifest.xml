@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RobLifeFitnessDiet">
+        <activity
+            android:name=".screens.weightmaintain"
+            android:exported="false" />
+        <activity
+            android:name=".screens.weightloss"
+            android:exported="false" />
+        <activity
+            android:name=".screens.weightgain"
+            android:exported="false" />
+        <activity
+            android:name=".screens.armworkouts"
+            android:exported="false" />
+        <activity
+            android:name=".screens.cardio"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Shoulderworkout"
+            android:exported="false" />
+        <activity
+            android:name=".screens.backworkout"
+            android:exported="false" />
+        <activity
+            android:name=".screens.support"
+            android:exported="false" />
+        <activity
+            android:name=".screens.legsworkouts"
+            android:exported="false" />
+        <activity
+            android:name=".screens.absworkouts"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Yogas"
+            android:exported="false" />
+        <activity
+            android:name=".screens.bmiactivit"
+            android:exported="false" />
+        <activity
+            android:name=".screens.bmitest"
+            android:exported="false" />
+        <activity
+            android:name=".screens.emilyverification"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".screens.aboutus"
+            android:exported="false" />
+        <activity
+            android:name=".screens.nutritions"
+            android:exported="false" />
+        <activity
+            android:name=".screens.workouts"
+            android:exported="false" />
+        <activity
+            android:name=".screens.login"
+            android:exported="false" />
+        <activity
+            android:name=".screens.Register"
+            android:exported="false" />
+        <activity
+            android:name=".screens.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screens.splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

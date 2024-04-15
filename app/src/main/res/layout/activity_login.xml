@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".screens.login">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:orientation="vertical">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200mdp"
+            app:lottie_rawRes="@raw/hianim"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"/>
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regularbold"
+            android:gravity="center"
+            android:text="Sign in"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:gravity="center"
+            android:text="Please log in to your account" />
+
+        <EditText
+            android:id="@+id/emailid"
+            android:layout_width="347dp"
+            android:layout_height="60dp"
+            android:background="@drawable/roundback"
+            android:ems="10"
+            android:fontFamily="sans-serif-black"
+            android:hint="Emailid"
+            android:inputType="textPersonName"
+            android:padding="10dp" />
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="71dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/roundback"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
+
+            <ImageView
+                android:id="@+id/showpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginEnd="7dp"
+                app:srcCompat="@drawable/showpassword" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/forgotpasswordbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="right"
+            android:padding="15dp"
+            android:text="Forgot password" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signinbutton"
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonround"
+            android:backgroundTint="#00BCD4"
+            android:fontFamily="@font/regularbold"
+            android:text="Sign in"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/orview"
+                android:layout_width="56dp"
+                android:layout_height="62dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center|center_vertical"
+                android:text="OR"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/donthaveaccount"
+            android:layout_width="181dp"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Don't have an account ?" />
+
+        <TextView
+            android:id="@+id/signup"
+            android:layout_width="121dp"
+            android:layout_height="29dp"
+            android:background="@drawable/buttonround"
+            android:gravity="center"
+            android:text="Sign up" />
+
+    </LinearLayout>
+
+
+
+</ScrollView>

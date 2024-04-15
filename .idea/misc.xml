@@ -1,0 +1,55 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable-v24/ic_rob_______3_.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/buttonround.xml" value="0.168" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/cardbackground.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/cardbuttonbg.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/malefemalefocus.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/malefemalnotfoucus.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/plusminus.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/roundback.xml" value="0.14020270270270271" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/drawable/roundbackwhite.xml" value="0.14020270270270271" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_aboutus.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_absworkouts.xml" value="0.11736111111111111" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_allworkouts.xml" value="0.12972972972972974" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_armworkouts.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_backworkout.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_bicepworkouts.xml" value="0.12060810810810811" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_bmiactivit.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_bmitest.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_cardio.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_emilyverification.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_legsworkouts.xml" value="0.1125" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_login.xml" value="0.12" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_nutritions.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_shoulderworkout.xml" value="0.11458333333333333" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_support.xml" value="0.10666666666666667" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_weightgain.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_weightloss.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_weightmaintain.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/activity_workouts.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/chestworkouts.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/imageandtext.xml" value="0.12631578947368421" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/main_navigation_bar.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/main_toolbar.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/reset_dailog.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/layout/singleiamge.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/menu/logoutmenu.xml" value="0.1" />
+        <entry key="..\:/Users/91865/AndroidStudioProjects/RobLifefitnessdiet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.13517915309446255" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

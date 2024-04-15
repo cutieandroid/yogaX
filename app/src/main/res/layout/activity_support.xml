@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screens.support">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200mdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/newprofileanim" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20mdp"
+            android:gravity="center"
+            android:text="Samiksha Gawade"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20font_mdp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/profile">
+
+        </TextView>
+
+
+
+        <TextView
+            android:id="@+id/lifeincrease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20mdp"
+            android:gravity="center"
+            app:layout_goneMarginTop="@dimen/_20mdp"
+            android:text="life increased by + 0.2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20font_mdp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/profile">
+
+        </TextView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+</ScrollView>
