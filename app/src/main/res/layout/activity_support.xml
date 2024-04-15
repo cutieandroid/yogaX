@@ -49,7 +49,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_20font_mdp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@+id/profile">
+            app:layout_constraintTop_toBottomOf="@+id/username">
 
         </TextView>
 
