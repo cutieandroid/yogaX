@@ -27,7 +27,10 @@ public class weightloss extends AppCompatActivity {
     String display;
     private RecyclerView recyclerViewweightgainbf,recyclerViewweightgainlun,recyclerViewweightgaindin;
     private ArrayList<Diet> dietitems;
-    private DietItemAdapter recyclerimageadapter;
+    private ArrayList<Diet> dietitemslun;
+    private ArrayList<Diet> dietitemsdin;
+    private DietItemAdapter recyclerimageadapter,recyclerimageadapterlun,recyclerimageadapterdin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,65 +41,54 @@ public class weightloss extends AppCompatActivity {
         recyclerViewweightgainbf=findViewById(R.id.recylerviewweightgainbf);
         recyclerViewweightgainlun=findViewById(R.id.recylerviewweightgainlun);
         recyclerViewweightgaindin=findViewById(R.id.recylerviewweightgaindin);
-        recyclerViewweightgainbf.setLayoutManager(new LinearLayoutManager(weightloss.this,LinearLayoutManager.HORIZONTAL,false) )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
-        ;
+
+        recyclerViewweightgainbf.setLayoutManager(new LinearLayoutManager(weightloss.this,LinearLayoutManager.HORIZONTAL,false));
         recyclerViewweightgainbf.setHasFixedSize(true);
-        recyclerViewweightgainlun.setLayoutManager(new LinearLayoutManager(weightloss.this,LinearLayoutManager.HORIZONTAL,false) )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+        recyclerViewweightgainlun.setLayoutManager(new LinearLayoutManager(weightloss.this,LinearLayoutManager.HORIZONTAL,false));
         recyclerViewweightgainlun.setHasFixedSize(true);
-        recyclerViewweightgaindin.setLayoutManager(new LinearLayoutManager(weightloss.this,LinearLayoutManager.HORIZONTAL,false) )                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
+        recyclerViewweightgaindin.setLayoutManager(new LinearLayoutManager(weightloss.this,LinearLayoutManager.HORIZONTAL,false));
         recyclerViewweightgaindin.setHasFixedSize(true);
+
         dietitems=new ArrayList<>();
+        dietitemslun=new ArrayList<>();
+        dietitemsdin=new ArrayList<>();
 
         intent=getIntent();
         display=intent.getStringExtra("bmi");
 
-
-
-        clearAll();
-        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference().child("yogadiet").child("weightgain").child("breakfast");
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-                clearAll();
-                for(DataSnapshot snapshot: datasnapshot.getChildren()){
-
-                    Diet diet= new Diet();
-                    diet.setDietItem(snapshot.getValue().toString());
-                    dietitems.add(diet);
-
-
-                }
-
-                recyclerimageadapter= new DietItemAdapter(getApplicationContext(),dietitems);
-                recyclerViewweightgainbf.setAdapter(recyclerimageadapter);
-                recyclerViewweightgainlun.setAdapter(recyclerimageadapter);
-                recyclerViewweightgaindin.setAdapter(recyclerimageadapter);
-                recyclerimageadapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-                Toast.makeText(weightloss.this, "Error:"+error.getMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
+        fetchDietItems("breakfast", recyclerViewweightgainbf, dietitems);
+        fetchDietItems("lunch", recyclerViewweightgainlun, dietitemslun);
+        fetchDietItems("dinner", recyclerViewweightgaindin, dietitemsdin);
     }
 
-    private void clearAll() {
-        if(dietitems!=null)
-        {
-            dietitems.clear();
-
-            if(recyclerimageadapter != null)
-            {
-                recyclerimageadapter.notifyDataSetChanged();
+    private void fetchDietItems(String mealType, RecyclerView recyclerView, ArrayList<Diet> dietItems) {
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("yogadiet").child("weightloss").child(mealType);
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                dietItems.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    Diet diet = new Diet();
+                    diet.setDietItem(snapshot.getValue().toString());
+                    dietItems.add(diet);
+                }
+                updateRecyclerView(recyclerView, dietItems);
             }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(weightloss.this, "Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void updateRecyclerView(RecyclerView recyclerView, ArrayList<Diet> dietItems) {
+        DietItemAdapter adapter = (DietItemAdapter) recyclerView.getAdapter();
+        if (adapter == null) {
+            adapter = new DietItemAdapter(getApplicationContext(), dietItems);
+            recyclerView.setAdapter(adapter);
+        } else {
+            adapter.notifyDataSetChanged();
         }
-        dietitems=new ArrayList<>();
-
-
-
     }
 }

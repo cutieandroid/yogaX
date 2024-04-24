@@ -29,8 +29,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String channel_id="fitnesstestchannel";
-    private static final int not_id=1;
+    private static final String channel_id = "fitnesstestchannel";
+    private static final int not_id = 1;
     DrawerLayout drawerLayout;
     TextView emailaccount;
 
@@ -44,13 +44,39 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        auth=FirebaseAuth.getInstance();
+        auth = FirebaseAuth.getInstance();
         //Assign Variables
-        drawerLayout=findViewById(R.id.drawer_layout);
-        emailaccount=findViewById(R.id.emailfieldnavigation);
-        final LottieAnimationView bmitest=findViewById(R.id.fitnesstest);
-        final LottieAnimationView yogaexercises=findViewById(R.id.yogaexercises);
-        final LottieAnimationView profile=findViewById(R.id.profile);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        emailaccount = findViewById(R.id.emailfieldnavigation);
+        final LottieAnimationView bmitest = findViewById(R.id.fitnesstest);
+        final LottieAnimationView yogaexercises = findViewById(R.id.yogaexercises);
+        final LottieAnimationView profile = findViewById(R.id.profile);
+        final LottieAnimationView posedetect = findViewById(R.id.posedetect);
+        posedetect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String packageName = "com.google.mlkit.vision.demo";
+
+                String activityClassName = "com.google.mlkit.vision.demo.java.CameraXLivePreviewActivity";
+
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.setPackage(packageName);
+
+                intent.setClassName(packageName, activityClassName);
+
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    // Open the other app
+                    startActivity(intent);
+                } else {
+                    // The app is not installed on the device or the specific component is not found
+                    // Handle this case accordingly
+                    System.out.println("error");
+                }
+
+            }
+        });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,9 +96,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, com.example.rob_lifefitnessdiet.screens.bmitest.class));
             }
         });
-        String currentusersemail=auth.getCurrentUser().getEmail();
+        String currentusersemail = auth.getCurrentUser().getEmail();
         emailaccount.setText(currentusersemail);
-
 
 
         /******************************redirect to bmi test activity***********************************/
@@ -122,18 +147,17 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
 
-   @Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater= getMenuInflater();
-        inflater.inflate(R.menu.logoutmenu,menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.logoutmenu, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.logout)
-        {
+        if (item.getItemId() == R.id.logout) {
             FirebaseAuth.getInstance().signOut();
             startActivity(new Intent(getApplicationContext(), login.class));
 
@@ -141,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void ClickMenu(View view){
+    public void ClickMenu(View view) {
         openDrawer(drawerLayout);
     }
 
@@ -149,48 +173,52 @@ public class MainActivity extends AppCompatActivity {
         //open drawer layout
         drawerLayout.openDrawer(GravityCompat.START);
     }
-    public void ClickLogo(View view){
+
+    public void ClickLogo(View view) {
         //close drawer
         closeDrawer(drawerLayout);
     }
 
     public static void closeDrawer(DrawerLayout drawerLayout) {
         //closedrawer layout
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
 
 
         }
 
     }
-    public void ClickHome(View view){
+
+    public void ClickHome(View view) {
         //recreate activity
         recreate();
 
     }
 
 
-    public void ClickWorkouts(View view){
+    public void ClickWorkouts(View view) {
         redirectActivity(this, workouts.class);
 
 
     }
 
-    public void ClickAboutUs(View view){
+    public void ClickAboutUs(View view) {
         redirectActivity(this, aboutus.class);
 
 
     }
-    public void clicksupport(View view){
+
+    public void clicksupport(View view) {
         redirectActivity(this, support.class);
     }
 
-    public void redirectActivity(Activity activity,Class aclass) {
-        Intent intent=new Intent (activity,aclass);
+    public void redirectActivity(Activity activity, Class aclass) {
+        Intent intent = new Intent(activity, aclass);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         activity.startActivity(intent);
     }
-    public void clickbmitest(View view){
+
+    public void clickbmitest(View view) {
         redirectActivity(this, bmitest.class);
     }
 

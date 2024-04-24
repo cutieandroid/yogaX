@@ -20,6 +20,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Register extends AppCompatActivity {
     private boolean regpasswordshowing=false;
@@ -149,8 +154,37 @@ public class Register extends AppCompatActivity {
                         fauth.signInWithEmailAndPassword(emailid,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(getApplicationContext(), emilyverification.class));
-                                finish();
+
+                                String userId = fauth.getCurrentUser().getUid();
+
+                                // Create a reference to the "users" collection
+                                DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users");
+
+                                // Create a new user object with the user's details
+                                Map<String, Object> newUser = new HashMap<>();
+                                newUser.put("fullname", fullname);
+                                newUser.put("email", emailid);
+                                newUser.put("lifeincreased", 0);
+
+                                // Add the new user data under the user's ID in the "users" collection
+                                usersRef.child(userId).setValue(newUser)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                // User data successfully added to the database
+                                                // Proceed to the next activity or perform any other action
+                                                startActivity(new Intent(getApplicationContext(), emilyverification.class));
+                                                finish();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // Error occurred while adding user data to the database
+                                                Toast.makeText(Register.this, "Failed to add user data to the database.", Toast.LENGTH_SHORT).show();
+                                                // You might want to handle this error and take appropriate action
+                                            }
+                                        });
                             }
                         });
 
